@@ -8,7 +8,7 @@ PyImageEdit es un editor de imágenes desarrollado en Python, con una arquitectu
 
 ## Características principales
 
-- **Interfaz gráfica adaptable**: Menú lateral siempre visible, con scroll visual si hay muchos botones.
+- **Interfaz gráfica adaptable**: Menú lateral con scroll visual.
 - **Botones inteligentes**: Los botones de edición y filtros solo están habilitados si hay una imagen cargada. "Deshacer" y "Rehacer" solo si hay acciones disponibles.
 - **Filtros y operaciones**: Escala de grises, rotaciones, espejado, brillo, redimensionar, desenfoque, bordes, realzar, sepia, invertir, binarizar, etc.
 - **POO y modularidad**: Código dividido en clases y módulos (`Imagen`, `EditorImagen`, `EditorGUI`, filtros como clases hijas).
