@@ -92,7 +92,7 @@ Proyecto/
 *Interfaz gráfica con menús desplegables y una imagen cargada.*
 
 ### CppImageEdit
-![Consola CppImageEdit](Assets/CppEditImage.gif)
+![Consola CppImageEdit](Assets/CPPEditImage.gif)
 *Menú interactivo por consola mostrando opciones de filtros.*
 
 ## Ejemplos de Uso
