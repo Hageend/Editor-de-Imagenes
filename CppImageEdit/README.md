@@ -1,65 +1,41 @@
-# CppImageEdit
+# Proyecto General: Editor de Imágenes
 
-Editor de imágenes modular en C++ usando POO y consola
+Este proyecto es un editor de imágenes modular y extensible, diseñado para demostrar principios de programación orientada a objetos (POO) y buenas prácticas de desarrollo de software.
 
-## Descripción
-CppImageEdit es un editor de imágenes desarrollado en C++ con arquitectura orientada a objetos y un menú interactivo por consola. Permite aplicar filtros y operaciones a imágenes de manera sencilla, modular y extensible.
+## Características
+- **Modularidad**: Código organizado en módulos y clases.
+- **Extensibilidad**: Fácil de agregar nuevos filtros y funcionalidades.
+- **Interactividad**: Menú interactivo por consola para aplicar filtros y operaciones.
+- **Soporte de formatos**: Carga y guarda imágenes en formatos populares como PNG, JPG, BMP, y TGA.
 
-## Características principales
-- **Menú interactivo por consola**: Navega y aplica filtros fácilmente.
-- **Filtros y operaciones**: Escala de grises, inversión, brillo, binarización, sepia.
-- **POO y modularidad**: Código dividido en clases y módulos (`Image`, `ImageEditor`, filtros como clases hijas de `IFilter`).
-- **Carga y guardado real de imágenes**: Soporte para PNG, JPG, BMP, TGA usando stb_image y stb_image_write.
-
-## Estructura del proyecto
+## Estructura del Proyecto
 ```
-CppImageEdit/
+Proyecto/
 ├── src/
-│   ├── core/
-│   │   ├── Image.h / Image.cpp         # Clase Imagen (carga, guardar, datos)
-│   │   ├── ImageEditor.h / .cpp        # Lógica de edición y filtros
-│   │   └── IFilter.h                   # Interfaz base para filtros
-│   ├── filters/
-│   │   ├── GrayscaleFilter.*           # Filtros concretos (grises, inversión, etc.)
-│   │   ├── InvertFilter.*
-│   │   ├── BrightnessFilter.*
-│   │   ├── ThresholdFilter.*
-│   │   └── SepiaFilter.*
-│   ├── main.cpp                        # Punto de entrada
-│   ├── stb_image.h                     # Librería de carga de imágenes
-│   └── stb_image_write.h               # Librería de guardado de imágenes
-├── README.md
-├── .gitignore
+│   ├── core/         # Clases principales como Image, ImageEditor, IFilter
+│   ├── filters/      # Implementaciones de filtros como Grayscale, Sepia, etc.
+│   ├── main.cpp      # Punto de entrada del programa
+│   ├── stb_image.h   # Librería para cargar imágenes
+│   └── stb_image_write.h # Librería para guardar imágenes
+├── README.md         # Documentación del proyecto
+├── .gitignore        # Archivos y carpetas ignorados por Git
 ```
 
 ## Requisitos
-- C++17 o superior
-- [stb_image.h](https://github.com/nothings/stb/blob/master/stb_image.h) y [stb_image_write.h](https://github.com/nothings/stb/blob/master/stb_image_write.h) en `src/`
-- Compilador compatible (g++, clang++)
+- **Lenguaje**: C++17 o superior
+- **Librerías**: stb_image, stb_image_write
+- **Compilador**: g++, clang++ o equivalente
 
-## Instalación y compilación
-
-En Windows (MSYS2/MinGW):
+## Compilación
+Ejecuta el siguiente comando para compilar el proyecto:
 ```sh
-g++ -Isrc/core -Isrc/filters src/main.cpp src/core/Image.cpp src/core/ImageEditor.cpp src/filters/GrayscaleFilter.cpp src/filters/InvertFilter.cpp src/filters/BrightnessFilter.cpp src/filters/ThresholdFilter.cpp src/filters/SepiaFilter.cpp -o imageedit.exe
+g++ -Isrc/core -Isrc/filters src/main.cpp src/core/*.cpp src/filters/*.cpp -o imageedit.exe
 ```
 
 ## Uso
-Ejecuta el editor desde la terminal:
-```sh
-./imageedit.exe
-```
-Sigue el menú para cargar, aplicar filtros y guardar imágenes.
+1. Ejecuta el programa:
+   ```sh
+   ./imageedit.exe
+   ```
+2. Sigue las instrucciones del menú para cargar imágenes, aplicar filtros y guardar los resultados.
 
-## Controles y explicación de menú
-- **1. Cargar imagen**: Selecciona y carga una imagen desde tu PC.
-- **2. Aplicar filtro gris**: Convierte la imagen a escala de grises.
-- **3. Aplicar filtro inversión**: Invierte los colores de la imagen.
-- **4. Aplicar filtro brillo**: Ajusta el brillo de la imagen.
-- **5. Aplicar filtro binarización**: Convierte la imagen a blanco y negro puro (umbral).
-- **6. Aplicar filtro sepia**: Da un tono antiguo a la imagen.
-- **7. Guardar imagen**: Guarda la imagen editada en el disco.
-- **8. Info de imagen**: Muestra dimensiones y canales de la imagen cargada.
-- **0. Salir**: Cierra el programa.
-
-> Puedes aplicar varios filtros en cadena antes de guardar.
